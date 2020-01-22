@@ -10,11 +10,25 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Talkable> zoo = new ArrayList<>();
 
+        Input input = new Input();
+
         // Lines to Replace Begin Here
-        zoo.add(new Dog(true, "Bean"));
-        zoo.add(new Cat(9, "Charlie"));
-        zoo.add(new Teacher(44, "Stacy Read"));
+//        zoo.add(new Dog(true, "Bean"));
+//        zoo.add(new Cat(9, "Charlie"));
+//        zoo.add(new Teacher(44, "Stacy Read"));
         // End Lines to Replace
+        InputTypeVerifier verifier = input.askAnimal();
+
+
+        if (verifier.type == 1) {
+            zoo.add(new Teacher(verifier.age, verifier.name));
+        } else if(verifier.type == 2){
+            zoo.add(new Cat(verifier.micekilled, verifier.name));
+        } else if(verifier.type == 3){
+            zoo.add(new Dog(verifier.nice, verifier.name));
+        } else {
+            System.out.println("Input is not valid.");
+        }
 
         for (Talkable thing : zoo) {
             printOut(thing);
