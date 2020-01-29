@@ -14,12 +14,12 @@ public class Input {
         while (!quitall) {
 //            System.out.println("What is the name of the animal?");
             System.out.println("What animal do you want to create?");
-            input = key.nextLine().toUpperCase().charAt(0);
             System.out.println("What animal?\n" +
                     "A) Person\n" +
                     "B) Cat\n" +
                     "C) Dog\n" +
                     "D) Quit");
+            input = key.nextLine().toUpperCase().charAt(0);
             try {
                 while (!quit) {
                     System.out.println("What is their name?");
